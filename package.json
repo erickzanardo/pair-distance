@@ -1,0 +1,28 @@
+{
+  "name": "pair-distance",
+  "version": "1.0.0",
+  "description": "Calculates de pair distance between two strings",
+  "main": "pair-distance.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha ./specs/pair-distance-specs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickzanardo/pair-distance.git"
+  },
+  "keywords": [
+    "string",
+    "pair",
+    "distance"
+  ],
+  "author": "Erick Zanardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erickzanardo/pair-distance/issues"
+  },
+  "homepage": "https://github.com/erickzanardo/pair-distance#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
