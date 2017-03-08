@@ -1,7 +1,7 @@
 "use strict";
 
 const toLowerCase = str => str.toLowerCase();
-const removeSpecialChars = str => str.replace(/[^a-zA-Z1-9]/, "");
+const removeSpecialChars = str => str.replace(/[^a-zA-Z1-9]/g, "");
 const unique = arr => arr.filter((value, index, self) => self.indexOf(value) == index);
 
 const union = (arr1, arr2) => arr1.concat(arr2);
@@ -12,9 +12,10 @@ const intersection = (arr1, arr2) =>
     .filter(value => arr1.indexOf(value) != -1 && arr2.indexOf(value) != -1)
   );
 
-const matchPairs = str => str.match(/../g);
-
-const toPairs = str => unique(union(matchPairs(str), matchPairs(str.slice(1))));
+const toPairs = str =>
+  str.split("").map(
+    (char, idx, array) => array[idx + 1] ? `${char}${array[idx + 1]}` : null
+  ).filter(str => str != null);
 
 module.exports = (a, b) => {
   const [pairsA, pairsB] = [a, b]
@@ -23,5 +24,5 @@ module.exports = (a, b) => {
     .map(toPairs)
     .map(unique);
 
-  return intersection(pairsA, pairsB).length * 2 / (pairsA.length + pairsB.length);
+  return (intersection(pairsA, pairsB).length * 2) / (pairsA.length + pairsB.length);
 }
