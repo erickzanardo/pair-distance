@@ -13,3 +13,8 @@ const pairDistance = require("pair-distance");
 const similarity = pairDistance("James Bond", "Bond, James Bond")
 console.log(similarity); // prints: 0.9411764705882353
 ```
+
+# CHANGELOG
+
+ -`1.1.0`: Ignoring diacritics 
+ -`1.0.0`: First commit

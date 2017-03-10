@@ -1,6 +1,6 @@
 {
   "name": "pair-distance",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Calculates de pair distance between two strings",
   "main": "pair-distance.js",
   "scripts": {
