@@ -1,6 +1,8 @@
 "use strict";
 
+const diacritics = require("./diacritics");
 const toLowerCase = str => str.toLowerCase();
+const removeDiacritics = str => diacritics.reduce((str, { diacritic, letter}) => str.replace(diacritic, letter), str);
 const removeSpecialChars = str => str.replace(/[^a-zA-Z1-9]/g, "");
 const unique = arr => arr.filter((value, index, self) => self.indexOf(value) == index);
 
@@ -20,6 +22,7 @@ const toPairs = str =>
 module.exports = (a, b) => {
   const [pairsA, pairsB] = [a, b]
     .map(toLowerCase)
+    .map(removeDiacritics)
     .map(removeSpecialChars)
     .map(toPairs)
     .map(unique);
